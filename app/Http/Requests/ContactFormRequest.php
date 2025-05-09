@@ -28,4 +28,14 @@ class ContactFormRequest extends BaseRequest
             'text' => 'required|string',
         ];
     }
+
+    public function attributes(): array
+    {
+        return [
+            'firstname' => __('contactForm.firstname'),
+            'lastname' => __('contactForm.lastname'),
+            'email' => __('contactForm.email'),
+            'text' => __('contactForm.text'),
+        ];
+    }
 }
