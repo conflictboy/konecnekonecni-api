@@ -30,7 +30,8 @@ class ProcessContact implements ShouldQueue
         $contact = Contact::create($this->inputs);
 
         if (env('MAIL_RECIPIENT')) {
-            Mail::to(env('MAIL_RECIPIENT'))->send(new ContactForm($contact));
+            Mail::to(explode(',', env('MAIL_RECIPIENT')))
+                ->send(new ContactForm($contact));
         }
     }
 }

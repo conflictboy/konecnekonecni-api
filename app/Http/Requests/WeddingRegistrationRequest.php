@@ -33,4 +33,17 @@ class WeddingRegistrationRequest extends BaseRequest
             'transport' => 'required|string',
         ];
     }
+
+    public function attributes(): array
+    {
+        return [
+            'firstname' => __('weddingRegistrationForm.firstname'),
+            'lastname' => __('weddingRegistrationForm.lastname'),
+            'escorts.*.firstname' => __('weddingRegistrationForm.escortFirstname'),
+            'escorts.*.lastname' => __('weddingRegistrationForm.escortLastname'),
+            'children.*.name' => __('weddingRegistrationForm.childrenName'),
+            'isAttending' => __('weddingRegistrationForm.isAttending'),
+            'transport' => __('weddingRegistrationForm.transport'),
+        ];
+    }
 }

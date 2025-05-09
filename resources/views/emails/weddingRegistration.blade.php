@@ -1,7 +1,8 @@
 <div>
-    {{__('emails.weddingRegistrationForm.name')}}: {{$weddingRegistration->firstname}} {{$weddingRegistration->lastname}}
+    <strong>{{__('emails.weddingRegistrationForm.name')}}</strong>:
+    {{$weddingRegistration->firstname}} {{$weddingRegistration->lastname}}
     <br/>
-    {{__('emails.weddingRegistrationForm.escort')}}:
+    <strong>{{__('emails.weddingRegistrationForm.escort')}}</strong>:
 
     @if ($weddingRegistration->escorts)
         {{$weddingRegistration->escorts}}
@@ -10,7 +11,7 @@
     @endif
 
     <br/>
-    {{__('emails.weddingRegistrationForm.children')}}:
+    <strong>{{__('emails.weddingRegistrationForm.children')}}</strong>:
     @if ($weddingRegistration->children)
         {{$weddingRegistration->children}}
     @else
@@ -18,12 +19,12 @@
     @endif
 
     <br/>
-    {{__('emails.weddingRegistrationForm.attending')}}:
+    <strong>{{__('emails.weddingRegistrationForm.attending')}}</strong>:
     @if ($weddingRegistration->isAttending)
         {{__('emails.weddingRegistrationForm.yes')}}
     @else
         {{__('emails.weddingRegistrationForm.no')}}
     @endif
     <br/>
-    {{__('emails.weddingRegistrationForm.transport')}}: {{$weddingRegistration->transport}}
+    <strong>{{__('emails.weddingRegistrationForm.transport')}}</strong>: {{$weddingRegistration->transport}}
 </div>

@@ -30,7 +30,8 @@ class ProcessWeddingRegistration implements ShouldQueue
         $weddingRegistration = WeddingRegistration::create($this->inputs);
 
         if (env('MAIL_RECIPIENT')) {
-            Mail::to(env('MAIL_RECIPIENT'))->send(new WeddingRegistrationForm($weddingRegistration));
+            Mail::to(explode(',', env('MAIL_RECIPIENT')))
+                ->send(new WeddingRegistrationForm($weddingRegistration));
         }
     }
 }
